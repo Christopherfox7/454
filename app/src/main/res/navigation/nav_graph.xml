@@ -19,9 +19,19 @@
         <action
             android:id="@+id/action_tipFragment_to_finalTotalFragment"
             app:destination="@id/finalTotalFragment" />
+        <argument
+            android:name="valArgument"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/finalTotalFragment"
         android:name="com.gardner.honorsmobileapps.tipcalculatorpart3.FinalTotalFragment"
-        android:label="FinalTotalFragment" />
+        android:label="FinalTotalFragment" >
+        <argument
+            android:name="totalArgument"
+            app:argType="float" />
+        <argument
+            android:name="personArgument"
+            app:argType="integer" />
+    </fragment>
 </navigation>

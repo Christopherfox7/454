@@ -125,10 +125,12 @@
         app:layout_constraintStart_toStartOf="@+id/sixKey"
         app:layout_constraintTop_toBottomOf="@+id/sixKey" />
 
-    <Button
+    <ImageButton
         android:id="@+id/backKey"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="#673AB7"
+        android:src="@android:drawable/ic_input_delete"
         android:text="Delete"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="@+id/sevenKey"
@@ -145,10 +147,12 @@
         app:layout_constraintStart_toStartOf="@+id/eightKey"
         app:layout_constraintTop_toBottomOf="@+id/eightKey" />
 
-    <Button
+    <ImageButton
         android:id="@+id/nextKey"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="#673AB7"
+        android:src="@android:drawable/checkbox_on_background"
         android:text="Next"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="@+id/nineKey"
@@ -167,7 +171,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.56" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"

@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.SeekBar
+import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.findNavController
 import com.gardner.honorsmobileapps.tipcalculatorpart3.databinding.FragmentTipBinding
 
 
@@ -28,13 +30,23 @@ class TipFragment : Fragment() {
         _binding = FragmentTipBinding.inflate(inflater, container,false)
         val rootView = binding.root
 
-        subtotal =100
+       // setFragmentResultListener("requestKey"){ requestKey, bundle ->
+            val args = TipFragmentArgs.fromBundle(requireArguments())
+            subtotal = args.valArgument
+            binding.money.text = "$"+subtotal+".00"
+     //   }
 
 
         setUpRadioButtons()
         setUpTipSeekBar()
         setUpNumOfGuestsSpinner()
 
+        binding.buttonNext.setOnClickListener{
+            val peopleVal = numOfGuest
+            val costVal = finalTotal.toFloat()
+            val action = TipFragmentDirections.actionTipFragmentToFinalTotalFragment(costVal, peopleVal)
+            rootView.findNavController().navigate(action)
+        }
 
         return rootView
     }
@@ -116,8 +128,8 @@ class TipFragment : Fragment() {
 
         binding.tip.text= "${tipPercent}%"
 
-        finalTotal =subtotal.times(tipPercent).div(100).plus(100)
-        binding.total.text = "$${finalTotal}"
+        finalTotal =(subtotal * ((tipPercent.toDouble()/100.0)+1)).toInt()
+        binding.total.text = "$${finalTotal}.00"
     }
 
 

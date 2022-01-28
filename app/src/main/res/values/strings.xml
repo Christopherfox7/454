@@ -11,6 +11,12 @@
     <string name="total_with_tip">Total With Tip:</string>
     <string name="guest">Guest:</string>
     <string name="next"><![CDATA[NEXT>]]></string>
+    <string name="subtotal_plus_tip">Subtotal Plus Tip:</string>
+    <string name="_0_00">$0.00</string>
+    <string name="each_person_owes">Each Person Owes:</string>
+    <string name="_0_0000">$0.00</string>
+    <string name="round_up">Round Up</string>
+    <string name="round_down">Round Down</string>
     <string-array name="guest_number">
         <item>1</item>
         <item>2</item>
